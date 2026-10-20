@@ -397,28 +397,28 @@ footer img{width:44px;height:44px;border-radius:50%;margin:0 auto 12px;border:2p
         <div class="ticket-day display">Terça-feira</div>
         <div class="ticket-hour">🕒 15:00 às 20:00</div>
         <div class="ticket-loc"><span class="num">1</span><div><b>Praça do Poli</b></div></div>
-        <div class="ticket-loc"><span class="num">2</span><div><b>Rua Rio Branco, 806</b><small>Próximo ao Maby</small></div></div>
+        <div class="ticket-loc"><span class="num">2</span><div><b>Rua Rio Branco, 806</b><small>Próximo ao Maby</small><small>Vila Ponta Porã</small></div></div>
       </div>
 
       <div class="ticket reveal-fade d2" data-day="3">
         <div class="ticket-day display">Quarta-feira</div>
         <div class="ticket-hour">🕒 15:00 às 20:00</div>
-        <div class="ticket-loc"><span class="num">1</span><div><b>Rua Honório Lemos</b></div></div>
-        <div class="ticket-loc"><span class="num">2</span><div><b>Obedy Cândido</b><small>Próximo à Asun</small></div></div>
+        <div class="ticket-loc"><span class="num">1</span><div><b>Rua Honório Lemos</b><small>Vila City</small></div></div>
+        <div class="ticket-loc"><span class="num">2</span><div><b>Obedy Cândido</b><small>Próximo à Asun</small><small>Central Park</small></div></div>
       </div>
 
       <div class="ticket reveal-fade d3" data-day="4">
         <div class="ticket-day display">Quinta-feira</div>
         <div class="ticket-hour">🕒 15:00 às 20:00</div>
-        <div class="ticket-loc"><span class="num">1</span><div><b>Rua Papa João XXIII, 316</b></div></div>
-        <div class="ticket-loc"><span class="num">2</span><div><b>UBS Osvaldo Cruz</b><small>Outro endereço</small></div></div>
+        <div class="ticket-loc"><span class="num">1</span><div><b>Rua Papa João XXIII, 316</b><small>Vila Cachoeirinha</small></div></div>
+        <div class="ticket-loc"><span class="num">2</span><div><b>UBS Osvaldo Cruz</b><small>Outro endereço</small><small>Parque Brasília</small></div></div>
       </div>
 
       <div class="ticket reveal-fade d4" data-day="5">
         <div class="ticket-day display">Sexta-feira</div>
         <div class="ticket-hour">🕒 15:00 às 20:00</div>
         <div class="ticket-loc"><span class="num">1</span><div><b>Avenida Panamericana, 1</b><small>Pq. da Matriz</small></div></div>
-        <div class="ticket-loc"><span class="num">2</span><div><b>Rua Princesa Isabel</b><small>Ao lado da Cancha de Bocha</small></div></div>
+        <div class="ticket-loc"><span class="num">2</span><div><b>Rua Princesa Isabel</b><small>Ao lado da Cancha de Bocha</small><small>Vila Princesa Izabel</small></div></div>
       </div>
 
       <div class="ticket reveal-fade d5" data-day="6">
@@ -508,8 +508,8 @@ footer img{width:44px;height:44px;border-radius:50%;margin:0 auto 12px;border:2p
       spots.forEach(function(spot){
         var num = spot.querySelector('.num') ? spot.querySelector('.num').textContent : '';
         var name = spot.querySelector('b') ? spot.querySelector('b').textContent : '';
-        var ref = spot.querySelector('small') ? spot.querySelector('small').textContent : '';
-        html += '<div class="today-spot"><span class="num">' + num + '</span><div><b>' + name + '</b>' + (ref ? '<small>' + ref + '</small>' : '') + '</div></div>';
+        var refs = Array.prototype.map.call(spot.querySelectorAll('small'), function(s){ return '<small>' + s.textContent + '</small>'; }).join('');
+        html += '<div class="today-spot"><span class="num">' + num + '</span><div><b>' + name + '</b>' + refs + '</div></div>';
       });
       html += '<div class="today-spot"><div><b>🕒 15:00 às 20:00</b></div></div>';
       body.innerHTML = html;
