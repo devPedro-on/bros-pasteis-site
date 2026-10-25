@@ -27,7 +27,8 @@
   color-scheme: dark;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:92px;}
+@media(max-width:767px){html{scroll-padding-top:132px;}}
 body{
   margin:0;
   font-family:'Poppins', 'Segoe UI', sans-serif;
@@ -70,7 +71,7 @@ header{
 .brand{display:flex;align-items:center;gap:12px;}
 .brand img{width:54px;height:54px;border-radius:50%;border:3px solid var(--gold-400);object-fit:cover;box-shadow:0 0 0 3px var(--green-950), 0 6px 14px rgba(0,0,0,.4);}
 .brand-text .name{font-family:'Anton',sans-serif;color:var(--orange-500);font-size:1.15rem;letter-spacing:1px;}
-.brand-text .tag{font-size:.6rem;opacity:.8;text-transform:uppercase;letter-spacing:1.5px;}
+.brand-text .tag{font-size:.7rem;opacity:.8;text-transform:uppercase;letter-spacing:1.5px;}
 nav.links ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
 nav.links a{font-weight:600;font-size:.9rem;opacity:.9;}
 nav.links a:hover{color:var(--gold-400);opacity:1;}
@@ -223,7 +224,7 @@ nav.links a:hover{color:var(--gold-400);opacity:1;}
 @media(max-width:700px){.cane-decor{width:170px;bottom:-28px;right:-22px;}.pastel-decor{width:150px;bottom:-24px;left:-18px;}}
 
 footer{background:var(--green-950);border-top:2px solid var(--gold-400);padding:40px 0 calc(30px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.82rem;opacity:.75;}
-footer img{width:44px;height:44px;border-radius:50%;margin:0 auto 12px;border:2px solid var(--gold-400);}
+footer img{width:44px;height:44px;object-fit:cover;border-radius:50%;margin:0 auto 12px;border:2px solid var(--gold-400);}
 
 @media(max-width:900px){
   .sobre-grid{grid-template-columns:1fr;}
